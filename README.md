@@ -4,7 +4,7 @@
     <img src="https://github.com/othneildrew/Best-README-Template/blob/master/images/logo.png?raw=true" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Alien_V2 for Asseto Corsa</h3>
+  <h3 align="center">Jaylien - Assetto Corsa Cheats</h3>
 
   <p align="center">
     <a href="https://discord.gg/fZDeS4vtqV">Support</a>
