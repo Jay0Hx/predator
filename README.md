@@ -17,20 +17,8 @@
 
 <h1 align="center">Features </a></h1>  
 
-***'Settings' Menu:***  
+***'Drivers Menu:***  
 This menu is mainly used from a development standpoint, i use it to hide certain features that are either un-tested, glitchy or not working. This menu also includes the ability to disable certain features that you might not use or want to see. For example, if you don't have any use for the 'Drivers' menu, you are able to hide it using the relevant option in the settings menu.
-
-***'Flash Maps' Menu:***  
-In this section you will find a list of pre-made maps for both speed and drivetrain, these maps have been tested using F1 style cars and are known to be as close to perfect as I can make. The auto-pilot feature will work with these flash maps meaning if you want to quickly catch up in a race, enable your desired flash map then enable auto-pilot. Gearbox maps override any current data you have on your manual gearbox tune.
-
-***'Manual Tuning' Menu:***  
-In this tab you will see options on manually tuning your vehicle in real time, please note that the 'Flash Map' options will override any options that you chose in the 'Manual Tuning' menu. There is a reset button included in each sub-section to automatically reset each section to the default should you wish too.
-
-***'Drivers' Menu:***  
-This menu lists all the current connected drivers to your session, click on each name to view a list of options such as spectate and teleport! This feature will 100% get you banned from servers with active admins but as far as I know you will not recieve a game ban as it uses functions that are built into the game. The 'Drivers' tab will also give you information such as the drivers lap positions, location and what car they are driving.
-
-***'Misc' Menu:***  
-In here you can find other options such as lap time editing, fuel adjustments and no collision. The misc menu is dedicated to housing items that do not fit directly into other categories, i do this to keep the menu width barable and not have a screen full of tabs of useless information and features that you might not use.
 
 <h1 align="center">Changes that I made</a></h1>
 
