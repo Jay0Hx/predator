@@ -17,8 +17,8 @@
 
 <h1 align="center">Features </a></h1>  
 
-***'Drivers Menu:***  
-This menu is mainly used from a development standpoint, i use it to hide certain features that are either un-tested, glitchy or not working. This menu also includes the ability to disable certain features that you might not use or want to see. For example, if you don't have any use for the 'Drivers' menu, you are able to hide it using the relevant option in the settings menu.
+***'Drivers' Menu:***  
+This menu is a live view of every connected driver in your current server that will display loads of usefull information with the added ability to spectate the driver.
 
 <h1 align="center">Changes that I made</a></h1>
 
