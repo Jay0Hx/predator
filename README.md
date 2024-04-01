@@ -30,7 +30,7 @@ REQUIREMENTS:
    4️⃣ > Navigate to your Assetto Corsa directory, usually located at 'C:\SteamLibrary\steamapps\common\assettocorsa'
    5️⃣ > Now head into 'Apps', then, 'lua' and drag and drop the 'PredatorV1' file into this directory.
    ```
-+ After completing the steps above you can now close you file manager window and open up content manager and join the server of your choice. Once in, click drive, slide your mouse to the right side of the screen and click on 'PredatorV1'. This will open the menu.
++ After completing the steps above you can now close you file manager window and open up content manager and join the server of your choice. Once in, click drive, slide your mouse to the right side of the screen and click on 'PredatorV1'. This will open the menu.<br>
 + Your final file structure should look something like this. You can ignore the Test files they are placeholders.
 
 <div align="center">
