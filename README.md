@@ -8,6 +8,10 @@
 
   <p align="center">
     <a href="https://discord.gg/fZDeS4vtqV">Official Support</a>
+        ·
+    <a href="https://discord.gg/WHHsDjm73Y">AlienV1</a>
+        ·
+    <a href="https://www.unknowncheats.me/forum/other-games/511184-assetto-corsa-alien-torque-grip-downforce.html">AlienV2</a>
   </p>
 </div>
 
