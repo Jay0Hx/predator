@@ -11,7 +11,7 @@
   </p>
 </div>
 
-<h1 align="center">❓Information❓</a></h1>
+<h1 align="center">Information</a></h1>
 
 PredatorV1 is the new version of AlienV1/V2 working for CSP versions 1.78 and newer. This project is a community effort and does not accept donations, money or gifts. With that in mind, if you ever see anyone trying to sell this source code. please alert LuaLoom and report the duplicate page to GitHub if possible.
 
