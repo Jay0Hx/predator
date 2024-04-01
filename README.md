@@ -20,8 +20,10 @@ PredatorV1 is the new version of AlienV1/V2 working for CSP versions 1.78 and ne
 </div>
 
 <h1 align="center">Features</a></h1>
-+ Your final file structure should look something like this. You can ignore the Test files they are placeholders.
-
++ This code shall not be sold or exchanged for profit or goods, this code will remain FREE to all consumers.
++ Credit must be given to the original authors of this source code upon redistribusion or editing.
++ LuaLoom cannot garuntee the saftey of files redistributed and does not hold responsibility for damages caused through non-offical repos.
++ LuaLoom will NOT provide support for issues raised through redistributions nor will we attempt to fix issues with non-official releases.
 </div>
 
 <h1 align="center">Installation Guide</a></h1> 
