@@ -13,29 +13,6 @@
   </p>
 </div>
 
-
-
-
-
-<!-- TABLE OF CONTENTS -->
-<div align="center">
-<details>
-  <summary>Quick Links</summary>
-  <ol>
-    <a href="#usage">What is 'PredatorV1'?</a>
-    <br><a href="#roadmap">Features</a>
-    <br><a href="#contributing">Installation Guide</a>
-    <br><a href="#license">Screenshots</a>
-    <br><a href="#contact">Licensing Information</a>
-    <br><a href="#acknowledgments">Support</a>
-  </ol>
-</details>
-</div>
-
-
-
-
-
 <h1 align="center">What is 'PredatorV1'?:</a></h1>
 
 <h1 align="center">Features:</a></h1>
