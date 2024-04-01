@@ -21,7 +21,7 @@
 <details>
   <summary>Quick Links</summary>
   <ol>
-    <li><a href="#usage">What is 'PredatorV1'?</a></li>
+    <a href="#usage">What is 'PredatorV1'?</a>
     <li><a href="#roadmap">Features</a></li>
     <li><a href="#contributing">Installation Guide</a></li>
     <li><a href="#license">Screenshots</a></li>
