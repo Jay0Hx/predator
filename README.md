@@ -3,9 +3,7 @@
   <a href="https://discord.gg/fZDeS4vtqV">
     <img src="https://github.com/Jay0Hx/Jaylien/assets/119745695/dc73011f-4ff0-4774-a7cb-1ad1035a09d1" alt="Logo" width="80" height="80">
   </a>
-
   <h3 align="center">'PredatorV1' | An Assetto Corsa, LUA based menu.</h3>
-
   <p align="center">
     <a href="https://discord.gg/fZDeS4vtqV">Official Support</a>
         ·
@@ -13,8 +11,6 @@
         ·
     <a href="https://www.unknowncheats.me/forum/other-games/511184-assetto-corsa-alien-torque-grip-downforce.html">AlienV2 (OG Release)</a>
   </p>
-
-   <h3 align="center">Current status: 🟠 DOWN FOR MAINTENANCE!</h3>
 </div>
 
 <h1 align="center">What is 'PredatorV1'?:</a></h1>
