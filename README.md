@@ -22,7 +22,7 @@
 <details>
   <summary>Quick Links</summary>
   <ol>
-    <br><a href="#usage">What is 'PredatorV1'?</a>
+    <a href="#usage">What is 'PredatorV1'?</a>
     <br><a href="#roadmap">Features</a>
     <br><a href="#contributing">Installation Guide</a>
     <br><a href="#license">Screenshots</a>
