@@ -24,10 +24,10 @@
   <ol>
     <a href="#usage">What is 'PredatorV1'?</a>
     <a href="#roadmap">Features</a>
-    <li><a href="#contributing">Installation Guide</a></li>
-    <li><a href="#license">Screenshots</a></li>
-    <li><a href="#contact">Licensing Information</a></li>
-    <li><a href="#acknowledgments">Support</a></li>
+    <a href="#contributing">Installation Guide</a>
+    <a href="#license">Screenshots</a>
+    <a href="#contact">Licensing Information</a>
+    <a href="#acknowledgments">Support</a>
   </ol>
 </details>
 </div>
