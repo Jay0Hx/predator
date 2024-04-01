@@ -47,5 +47,7 @@
   </a>
 </div>
 
+<h1 align="center">Screenshots:</a></h1>
+
 <h1 align="center">Licensing Information:</a></h1>
 
