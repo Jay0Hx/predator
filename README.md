@@ -29,11 +29,11 @@ This menu is a live view of every connected driver in your current server that w
 <h1 align="center">Installation Guide</a></h1> 
 
    ```sh
-   1 > Download the latest release from my GitHub.
-   2 > Navigate to your asseto corsa install location!
-   3 > Click apps then lua.
-   4 > drag alient_v2-main into the lua file.
-   5 > remove main from the file name.  
+   1️⃣ > Download the latest release from this GitHub repo.
+   2️⃣ > Navigate to your asseto corsa install location!
+   3️⃣ > Open the 'Apps' directory, then then 'lua' directory.
+   4️⃣ > Drag predatorV1-main into the lua file.
+   5️⃣ > Remove main from the file name. (PredatorV1 Should be the file name!)
    
    And you are done!
    
