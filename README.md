@@ -20,6 +20,8 @@ PredatorV1 is the new version of AlienV1/V2 working for CSP versions 1.78 and ne
 </div>
 
 <h1 align="center">Features:</a></h1>
+* test
+* test
 </div>
 
 <h1 align="center">Installation Guide:</a></h1> 
