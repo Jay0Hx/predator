@@ -19,10 +19,9 @@
 PredatorV1 is the new version of AlienV1/V2 working for CSP versions 1.78 and newer. This project is a community effort and does not accept donations, money or gifts. With that in mind, if you ever see anyone trying to  sell this source code. please alert LuaLoom and report the duplicate page to GitHub if possible. PredatorV1 is a trainer designed for Assetto Corsa (Standard edition) to manipulate game physics such as turbo pressue, car weight, car speed, braking force, acceleration and more. LuaLoom does not condone the use of   PredatorV1 for official tournaments on Assetto Corsa and encourages a fair use policy. This project was created as a proof of concept via AlienV1, created by 'itisluiz' to demonstrate uses of LUA definitions. Since the fall of AlienV1, V2 and 'Jaylien' we have been working hard to create a new and imporved version that can still be just as effective.
 </div>
 
-<h1 align="center">Features:</a></h1>
+<h1 align="center">Features:</a></h1></div>
 * test
-* test
-</div>
+*test
 
 <h1 align="center">Installation Guide:</a></h1> 
 
