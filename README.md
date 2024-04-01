@@ -41,4 +41,7 @@ This menu is a live view of every connected driver in your current server that w
    To use this menu just go in game, hover your mouse over the right side of the screen to reveal the menu toggle
    panel and select 'Alien V2.1(1)'.
    ```
-<h1 align="center">![Screenshot 2024-04-01 151649](https://github.com/Jay0Hx/PredatorV1/assets/119745695/789f4feb-c2c4-474f-8f9b-685811266edf)</a></h1>
+
+<div align="center">
+  ![Screenshot 2024-04-01 151649](https://github.com/Jay0Hx/PredatorV1/assets/119745695/789f4feb-c2c4-474f-8f9b-685811266edf)</a></h1>
+</div>
