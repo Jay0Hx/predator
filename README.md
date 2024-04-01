@@ -7,7 +7,7 @@
   <h3 align="center">'PredatorV1' | An Assetto Corsa, LUA based menu.</h3>
 
   <p align="center">
-    <a href="https://discord.gg/fZDeS4vtqV">Support</a>
+    <a href="https://discord.gg/fZDeS4vtqV">Official Support</a>
   </p>
 </div>
 
