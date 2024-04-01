@@ -14,7 +14,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/d3b2ea2e-fac2-443f-9158-f63410d138ca" alt="Logo" width="80" height="80">
+  <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/d3b2ea2e-fac2-443f-9158-f63410d138ca" alt="Logo">
 </div>
 
 
