@@ -21,16 +21,14 @@
 
    ```sh
    1️⃣ > Download the latest release from this GitHub repo.
-   2️⃣ > Navigate to your asseto corsa install location!
-          ∟ Usuall ('C:\SteamLibrary\steamapps\common\assettocorsa')
-   3️⃣ > Open the 'Apps' directory, then 'lua' directory.
-   4️⃣ > Drag PredatorV1-main into the lua file.
-   5️⃣ > Remove main from the file name. (PredatorV1 Should be the file name!)
+   2️⃣ > Extract the contents to your desktop.
+   3️⃣ > Rename the new file to 'PredatorV1'.
+   4️⃣ > Navigate to your Assetto Corsa directory, usually located at 'C:\SteamLibrary\steamapps\common\assettocorsa'
+   5️⃣ > Now head into 'Apps', then, 'lua' and drag and drop the 'PredatorV1' file into this directory.
 
-   And you are done!
-   
-   To use this menu just go in game, hover your mouse over the right side of the screen to reveal the menu toggle
-   panel and select 'Alien V2.1(1)'.
+   After completing the steps above you can now close you file manager window and open up content manager and join
+   the server of your choice. Once in, click drive, slide your mouse to the right side of the screen and click on
+   'PredatorV1'. This will open the menu.
    ```
 + Your final file structure should look something like this. You can ignore the Test files they are placeholders.
 
