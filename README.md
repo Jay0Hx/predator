@@ -17,7 +17,7 @@
 
 <h1 align="center">Features </a></h1>  
 
-***'Drivers' Menu:***  
+***- 'Drivers' Menu:***  
 This menu is a live view of every connected driver in your current server that will display loads of usefull information with the added ability to spectate the driver. Currently this menu is slighly buggy and won't update correctly when drivers leave and rejoin multiple times, it seems to duplicate the entry for that driver?
 
 <h1 align="center">Changes that I made</a></h1>
