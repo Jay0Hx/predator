@@ -14,7 +14,8 @@
 </div>
 
 
-![Untitled-1](https://github.com/Jay0Hx/PredatorV1/assets/119745695/32caeb1e-e943-4822-b786-0a205d28375b)
+![Untitled-1](https://github.com/Jay0Hx/PredatorV1/assets/119745695/d3b2ea2e-fac2-443f-9158-f63410d138ca)
+
 
 
 
