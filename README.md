@@ -20,6 +20,10 @@
 <h1 align="center">Installation Guide:</a></h1> 
 
    ```sh
+REQUIREMENTS:
+   1. WinRar or a RAR file manager or your choice.
+   2. Content Manager for Assetto Corsa.
+
    1️⃣ > Download the latest release from this GitHub repo.
    2️⃣ > Extract the contents to your desktop.
    3️⃣ > Rename the new file to 'PredatorV1'.
