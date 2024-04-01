@@ -45,7 +45,7 @@ PredatorV1 is the new version of AlienV1/V2 working for CSP versions 1.78 and ne
   </a>
 </div>
 
-<h1 align="center">Licensing Information</a></h1>
+<h1 align="center">Licensing Information:</a></h1>
 LuaLoom approves the redistribusion and editing of 'PredatorV1' provided that the following conditions are met:
 
 + This code shall not be sold or exchanged for profit or goods, this code will remain FREE to all consumers.
