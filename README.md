@@ -41,6 +41,7 @@
 </div>
 
 <h1 align="center">Licensing Information:</a></h1>
+LuaLoom:
 + This code shall not be sold or exchanged for profit or goods, this code will remain FREE to all consumers.
 + Credit must be given to the original authors of this source code upon redistribusion or editing.
 + LuaLoom cannot garuntee the saftey of files redistributed and does not hold responsibility for damages caused through non-offical repos.
