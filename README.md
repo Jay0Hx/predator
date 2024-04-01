@@ -50,4 +50,5 @@ This menu is a live view of every connected driver in your current server that w
 </div>
 
 <h1 align="center">❓Information regarding sharing and editing❓</a></h1>
+Blah Blah Blah
 
