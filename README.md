@@ -47,7 +47,7 @@ This menu is a live view of every connected driver in your current server that w
 
 <div align="center">
   <a href="https://discord.gg/fZDeS4vtqV">
-    <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/789f4feb-c2c4-474f-8f9b-685811266edf" alt="Logo" width="80" height="80">
+    <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/789f4feb-c2c4-474f-8f9b-685811266edf" alt="Logo">
   </a>
 
   <h3 align="center">Predator | V1 - Assetto Corsa Cheats</h3>
