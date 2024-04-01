@@ -11,7 +11,7 @@
   </p>
 </div>
 
-<h1 align="center">Information</a></h1>
+<h1 align="center">Information:</a></h1>
 
 
 
