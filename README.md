@@ -13,8 +13,10 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<div align="center">
+
+
+
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -39,7 +41,10 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>]
-</div>
+
+
+
+
 
 <h1 align="center">What is 'PredatorV1'?:</a></h1>
 
