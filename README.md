@@ -13,7 +13,7 @@
   </p>
 </div>
 
-<h1 align="center">Index:</a></h1>
+<h1 align="center">Index</a></h1>
 
 <h1 align="center">What is 'PredatorV1'?:</a></h1>
 
