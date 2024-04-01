@@ -20,10 +20,8 @@ PredatorV1 is the new version of AlienV1/V2 working for CSP versions 1.78 and ne
 </div>
 
 <h1 align="center">Features</a></h1>
-
-***- 'Drivers' Menu:***  
-This menu is a live view of every connected driver in your current server that will display loads of usefull information with the added ability to spectate the driver. Currently this menu is slighly buggy and won't update correctly when drivers leave and rejoin multiple times, it seems to duplicate the entry for that driver?
-
++ 'Drivers' Menu
++ 'Settings' Menu
 </div>
 
 <h1 align="center">Installation Guide</a></h1> 
