@@ -18,17 +18,19 @@
 
 
 <!-- TABLE OF CONTENTS -->
+<div align="center">
 <details>
   <summary>Quick Links</summary>
   <ol>
     <a href="#usage">What is 'PredatorV1'?</a>
-    <li><a href="#roadmap">Features</a></li>
+    <a href="#roadmap">Features</a>
     <li><a href="#contributing">Installation Guide</a></li>
     <li><a href="#license">Screenshots</a></li>
     <li><a href="#contact">Licensing Information</a></li>
     <li><a href="#acknowledgments">Support</a></li>
   </ol>
 </details>
+</div>
 
 
 
