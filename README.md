@@ -1,8 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="![predator](https://github.com/Jay0Hx/Jaylien/assets/119745695/dc73011f-4ff0-4774-a7cb-1ad1035a09d1)
-" alt="Logo" width="80" height="80">
+    <img src="https://github.com/Jay0Hx/Jaylien/assets/119745695/dc73011f-4ff0-4774-a7cb-1ad1035a09d1" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">PredatorV1 - Assetto Corsa Cheats</h3>
