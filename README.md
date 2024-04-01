@@ -20,12 +20,6 @@
 ***- 'Drivers' Menu:***  
 This menu is a live view of every connected driver in your current server that will display loads of usefull information with the added ability to spectate the driver. Currently this menu is slighly buggy and won't update correctly when drivers leave and rejoin multiple times, it seems to duplicate the entry for that driver?
 
-<h1 align="center">Changes that I made</a></h1>
-
-+ Added '*Flash Map*' options (This is a new tab that introduces 'maps' with pre-defined vaules for power etc...)  
-+ I've compiled some things like power and handling under the same menu for easier use.     
-+ There is now a 'Drivers' tab that allows you to teleport to people around the track or spectate them!
-
 <h1 align="center">Installation Guide</a></h1> 
 
    ```sh
