@@ -20,8 +20,8 @@ PredatorV1 is the new version of AlienV1/V2 working for CSP versions 1.78 and ne
 </div>
 
 <h1 align="center">Features</a></h1>
-+ 'Drivers' Menu
-+ 'Settings' Menu
++ Your final file structure should look something like this. You can ignore the Test files they are placeholders.
+
 </div>
 
 <h1 align="center">Installation Guide</a></h1> 
