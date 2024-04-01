@@ -14,7 +14,7 @@
     <a href="https://www.unknowncheats.me/forum/other-games/511184-assetto-corsa-alien-torque-grip-downforce.html">AlienV2 (OG Release)</a>
   </p>
 
-   <h3 align="center">Current status: 🟠 MAINTENANCE</h3>
+   <h3 align="center">Current status: 🟠 DOWN FOR MAINTENANCE!</h3>
 </div>
 
 <h1 align="center">Information:</a></h1>
