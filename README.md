@@ -13,7 +13,9 @@
 
 <h1 align="center">❓Information❓</a></h1>
 
-***NOTE:*** This is a new and working version of my archived version of the AlienV2 menu, originally created by 'itisluiz'. DO NOT BUY THIS FROM ANYONE IT IS FREE TO USE. I have noticed people are trying to sell the old verion that is no longer working, please don't fall for the scam, the code is FREE to use and edit by anyone, this is open source! AlienV2 was originally made by 'itisluiz'. I took this source code and added teleportation, engine manipulation pre-sets and more. That version no longer works hense I am making this new version.
+PredatorV1 is the new version of AlienV1/V2 working for CSP versions 1.78 and newer. This project is a community effort and does not accept donations, money or gifts. With that in mind, if you ever see anyone trying to sell this source code. please alert LuaLoom and report the duplicate page to GitHub if possible.
+
+PredatorV1 is a trainer designed for Assetto Corsa (Standard edition) to manipulate game physics such as turbo pressue, car weight, car speed, braking force, acceleration and more. LuaLoom does not condone the use of PredatorV1 for official tournaments on Assetto Corsa and encourages a fair use policy. This project was created as a proof of concept via AlienV1, created by 'itisluiz' to demonstrate uses of LUA definitions. Since the fall of AlienV1, V2 and 'Jaylien' we have been working hard to create a new and imporved version that can still be just as effective.
 
 <h1 align="center">Features </a></h1>  
 
