@@ -31,7 +31,7 @@ This menu is a live view of every connected driver in your current server that w
    ```sh
    1️⃣ > Download the latest release from this GitHub repo.
    2️⃣ > Navigate to your asseto corsa install location!
-                  ∟ Usuall ('C:\SteamLibrary\steamapps\common\assettocorsa')
+          ∟ Usuall ('C:\SteamLibrary\steamapps\common\assettocorsa')
    3️⃣ > Open the 'Apps' directory, then then 'lua' directory.
    4️⃣ > Drag predatorV1-main into the lua file.
    5️⃣ > Remove main from the file name. (PredatorV1 Should be the file name!)
