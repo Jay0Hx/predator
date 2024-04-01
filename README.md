@@ -41,7 +41,7 @@ This menu is a live view of every connected driver in your current server that w
    To use this menu just go in game, hover your mouse over the right side of the screen to reveal the menu toggle
    panel and select 'Alien V2.1(1)'.
    ```
-+ There is now a 'Drivers' tab that allows you to teleport to people around the track or spectate them!
++ Your final file structure should look something like this. You can ignore the Test files they are placeholders.
 
 <div align="center">
   <a href="https://discord.gg/fZDeS4vtqV">
