@@ -7,21 +7,39 @@ local predator_setting = {
   menu_settings = {
     drivers_tab = true,
     client_information = true,
+    self_tracking_pos = false,
+    seld_tracking_cam = false,
+  },
+
+  drivers_tab = {
+
   },
 }
 
 function script.windowMain(PredatorV1)
   ui.tabBar("main_tabs", function()
-    ui.tabItem("Settings", function()
+    ui.tabItem("⚙️ Settings", function()
       if ui.checkbox("Enable 'Drivers' tab.", predator_setting.menu_settings.drivers_tab) then  
         predator_setting.menu_settings.drivers_tab = not predator_setting.menu_settings.drivers_tab   
       end
       if ui.checkbox("Enable 'Your Information' tab.", predator_setting.menu_settings.client_information) then  
         predator_setting.menu_settings.client_information = not predator_setting.menu_settings.client_information   
       end
+      if ui.checkbox("Track my vehicle position (Vec3) - Used for debugging.", predator_setting.menu_settings.self_tracking_pos) then  
+        predator_setting.menu_settings.self_tracking_pos = not predator_setting.menu_settings.self_tracking_pos   
+      end
+      if ui.checkbox("Track my camera position (Vec3) - Used for debugging.", predator_setting.menu_settings.seld_tracking_cam) then  
+        predator_setting.menu_settings.seld_tracking_cam = not predator_setting.menu_settings.seld_tracking_cam   
+      end
+      if ui.button("Refresh drivers tab") then
+        
+      end
     end)
     if predator_setting.menu_settings.drivers_tab then
-      ui.tabItem("Drivers", function()
+      ui.tabItem("🚗 Drivers", function()
+        ui.treeNode("⚙️ Drivers Tab settings", ui.TreeNodeFlags.DefaultClosed and ui.TreeNodeFlags.Framed, function ()
+        end)
+        ui.separator()
       end)
     end
 
@@ -32,12 +50,16 @@ function script.windowMain(PredatorV1)
           ui.text("   👋 • Display Name: "..ac.getDriverName())
           ui.text("   🩹 • Patch Version: "..ac.getPatchVersion())
           ui.text("   📐 • Current FOV: "..ac.getCameraFOV())
-          ui.text("   🗺️ • Position:")
-          ui.sameLine()
-          ui.text(ac.getCameraPosition())
-          ui.text("   📷 • Camera:")
-          ui.sameLine()
-          ui.text(ac.getCameraDirection()) 
+          if predator_setting.menu_settings.self_tracking_pos then
+            ui.text("   🗺️ • Position:")
+            ui.sameLine()
+            ui.text(ac.getCameraPosition())
+          end
+          if predator_setting.menu_settings.seld_tracking_cam then 
+            ui.text("   📷 • Camera:")
+            ui.sameLine()
+            ui.text(ac.getCameraDirection()) 
+          end
         end)
         ui.treeNode("Track Information", ui.TreeNodeFlags.DefaultClosed and ui.TreeNodeFlags.Framed, function ()
           ui.text("   🛣️ • Track ID: "..ac.getTrackId())
