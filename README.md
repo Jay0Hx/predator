@@ -14,6 +14,8 @@
 </div>
 
 <h1 align="center">What is 'PredatorV1'?:</a></h1>
+v0.1.79 ONLY!
+
 
 <h1 align="center">Features:</a></h1>
 
