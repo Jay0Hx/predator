@@ -20,6 +20,7 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
 
 
 <h1 align="center">Features:</a></h1>
+```sh
 Drivers List:
   List all drivers currently connected to your session.
   Driver information like name, car and position in race.
@@ -40,7 +41,7 @@ Vehicle menu:
   Power modification slider.
   Brake force manipulation slider.
   Downforce manipulation slider.
-
+```
 <h1 align="center">Installation Guide:</a></h1> 
 
    ```sh
