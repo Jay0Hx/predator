@@ -49,4 +49,5 @@ REQUIREMENTS:
 <h1 align="center">Screenshots:</a></h1>
 
 <h1 align="center">Licensing Information:</a></h1>
+This software/script was created for educational purposes. You may re-distribute this software provided you give credit to the orignal creator/s linked at the top of this repo. This software is not to be used with malicous intent.
 
