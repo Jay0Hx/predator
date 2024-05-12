@@ -20,42 +20,24 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
 
 
 <h1 align="center">Features:</a></h1>
-```sh
-Drivers List:
-  List all drivers currently connected to your session.
-  Driver information like name, car and position in race.
-  Ability to spectate any driver in the race.
-  Ability to teleport to any driver in the race (You must be spectating them)
-  Steal the name of any driver in the race.
 
-Auto-Pilot:
-  Enable/Disable.
-  Skill adjustments.
-  Aggression adjustments (slightly buggy).
-
-Vehicle menu:
-  Optimal tire pressures.
-  Disable body and engine damage. (Some cosmetic damage remains)
-  Freeze fuel amount.
-  Count rammers (This will set downforce higher and enable noclip)
-  Power modification slider.
-  Brake force manipulation slider.
-  Downforce manipulation slider.
-```
 <h1 align="center">Installation Guide:</a></h1> 
 
    ```sh
 REQUIREMENTS:
    1. WinRar or a RAR file manager or your choice.
    2. Content Manager for Assetto Corsa.
+   3. An injector of your choice (I use cheat engine).
 
    1️⃣ > Download the latest release from this GitHub repo.
    2️⃣ > Extract the contents to your desktop.
    3️⃣ > Rename the new file to 'PredatorV1'.
    4️⃣ > Navigate to your Assetto Corsa directory, usually located at 'C:\SteamLibrary\steamapps\common\assettocorsa'
    5️⃣ > Now head into 'Apps', then, 'lua' and drag and drop the 'PredatorV1' file into this directory.
+   6️⃣ > Load into a sesion of your choice on CSP version 0.1.79 or lower.
+   7️⃣ > Use cheat engine to inject the provided DLL into the process.
    ```
-+ After completing the steps above you can now close you file manager window and open up content manager and join the server of your choice. Once in, click drive, slide your mouse to the right side of the screen and click on 'PredatorV1'. This will open the menu.
++ After completing the steps above you are good to go, navigate to the side bar of AC and open 'predator'. This will present you with the menu in game and you can begin ruining peoples days.
 + Your final file structure should look something like this. You can ignore the Test files they are placeholders.
 
 <div align="center">
