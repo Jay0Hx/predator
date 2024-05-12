@@ -20,6 +20,26 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
 
 
 <h1 align="center">Features:</a></h1>
+Drivers List:
+  List all drivers currently connected to your session.
+  Driver information like name, car and position in race.
+  Ability to spectate any driver in the race.
+  Ability to teleport to any driver in the race (You must be spectating them)
+  Steal the name of any driver in the race.
+
+Auto-Pilot:
+  Enable/Disable.
+  Skill adjustments.
+  Aggression adjustments (slightly buggy).
+
+Vehicle menu:
+  Optimal tire pressures.
+  Disable body and engine damage. (Some cosmetic damage remains)
+  Freeze fuel amount.
+  Count rammers (This will set downforce higher and enable noclip)
+  Power modification slider.
+  Brake force manipulation slider.
+  Downforce manipulation slider.
 
 <h1 align="center">Installation Guide:</a></h1> 
 
