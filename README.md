@@ -54,7 +54,6 @@ REQUIREMENTS:
     <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/5322e994-d2b8-40d3-ab62-a3a2abf5e08d" alt="Logo">
   </a>
 </div>
-![file_structure]()
 
 <h1 align="center">Screenshots:</a></h1>
 
