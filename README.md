@@ -42,8 +42,34 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
                   ∟ Force Jump
                   ∟ Launch Up
                   ∟ Skid off track
+
    🚗 > 'Vehicle' Menu.
+            ∟ Optimal tyre pressure
+            ∟ Disable body and engine damage
+            ∟ Freeze fuel amount
+            ∟ Counter rammers
+            ∟ Attempt to force DRS usage
+            ∟ Downforce multiplier
+            ∟ Power multiplier
+            ∟ Fuel quanitity manager
+            ∟ Braking force multiplier
+            ∟ VEHICLE RELATIVE MANIPULATION MENU
+                  ∟ X Axis manipulation + Reset button
+                  ∟ Y Axis manipulation + Reset button
+                  ∟ Z Axis manipulation + Reset button
+                  ∟ Trigger current values
+                  ∟ Lil squat
+                  ∟ Squat
+                  ∟ Hop
+                  ∟ Jump
+                  ∟ Leap
+
    ✈️ > 'Auto-pilot' Menu.
+            ∟ Toggle auto-pilot on/off
+            ∟ Skill multiplier slider
+            ∟ Aggressiveness multiplier slider
+            ∟ Grip multiplier slider
+            ∟ Allowed top speed slider
    ```
 
 
