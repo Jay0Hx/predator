@@ -30,6 +30,13 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
 
 <h1 align="center">Features:</a></h1>
 
+   ```sh
+   🛞 > 'Drivers' Menu.
+   🚗 > 'Vehicle' Menu.
+   ✈️ > 'Auto-pilot' Menu.
+   ```
+
+
 <h1 align="center">Installation Guide:</a></h1> 
 
    ```sh
