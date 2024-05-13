@@ -101,11 +101,11 @@ REQUIREMENTS:
 <h1 align="center">Future plans:</a></h1>
 
    ```sh
-            Add more information to the drivers tab such as driver country, flag etc...
-            Make teleport NOT rely on spectating the target.
-            Create a section that allows you to fly the car like a plane.
-            Add teleportation options like, front, back left and right of target.
-            Allow for fine tuning the sliders with buttons.
+            ∟ Add more information to the drivers tab such as driver country, flag etc...
+            ∟ Make teleport NOT rely on spectating the target.
+            ∟ Create a section that allows you to fly the car like a plane.
+            ∟ Add teleportation options like, front, back left and right of target.
+            ∟ Allow for fine tuning the sliders with buttons.
    ```
 
 
