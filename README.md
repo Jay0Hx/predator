@@ -38,7 +38,7 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
                   ∟ Spectate
                   ∟ Teleport Too
                   ∟ Steal Name
-            ∟ SINGLE PLAYER OPTIONS:
+            ∟ SINGLE PLAYER OPTIONS: (THEESE ONLY WORK FOR OFFLINE MODE!)
                   ∟ Force Jump
                   ∟ Launch Up
                   ∟ Skid off track
@@ -47,8 +47,8 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
             ∟ Optimal tyre pressure
             ∟ Disable body and engine damage
             ∟ Freeze fuel amount
-            ∟ Counter rammers
-            ∟ Attempt to force DRS usage
+            ∟ Counter rammers (A form of no-clip but not actually no-clip)
+            ∟ Attempt to force DRS usage (Buddy, dependant on server state)
             ∟ Downforce multiplier
             ∟ Power multiplier
             ∟ Fuel quanitity manager
@@ -69,7 +69,7 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
             ∟ Skill multiplier slider
             ∟ Aggressiveness multiplier slider
             ∟ Grip multiplier slider
-            ∟ Allowed top speed slider
+            ∟ Allowed top speed slider (Force AI to max out at a certain speed)
    ```
 
 
