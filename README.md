@@ -51,9 +51,10 @@ REQUIREMENTS:
 
 <div align="center">
   <a href="https://discord.gg/fZDeS4vtqV">
-    <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/789f4feb-c2c4-474f-8f9b-685811266edf" alt="Logo">
+    <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/5322e994-d2b8-40d3-ab62-a3a2abf5e08d" alt="Logo">
   </a>
 </div>
+![file_structure]()
 
 <h1 align="center">Screenshots:</a></h1>
 
