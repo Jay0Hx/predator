@@ -98,7 +98,16 @@ REQUIREMENTS:
   </a>
 </div>
 
-<h1 align="center">Screenshots:</a></h1>
+<h1 align="center">Future plans:</a></h1>
+
+   ```sh
+            Add more information to the drivers tab such as driver country, flag etc...
+            Make teleport NOT rely on spectating the target.
+            Create a section that allows you to fly the car like a plane.
+            Add teleportation options like, front, back left and right of target.
+            Allow for fine tuning the sliders with buttons.
+   ```
+
 
 <h1 align="center">Licensing Information:</a></h1>
 This software/script was created for educational purposes. You may re-distribute this software provided you give credit to the orignal creator/s linked at the top of this repo. This software is not to be used with malicous intent. This software has been tested and is known to be free of any virus' or malicous intent. With that in mind please be aware this is the true source of PredatorV1 and you may download from an external site that has planted malicous code.
