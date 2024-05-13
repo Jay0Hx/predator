@@ -22,12 +22,11 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
 
 <div align="center">
   <a href="https://discord.gg/fZDeS4vtqV">
-    <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/fc36d8c2-2b0a-4d66-a689-0bc657cc550b" alt="Logo">
+    <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/fc36d8c2-2b0a-4d66-a689-0bc657cc550b" alt="drivers_tab">
+    <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/74b96ee0-e7c8-40d7-9aca-953e924f6484" alt="vehicle_tab">
+    <img src="https://github.com/Jay0Hx/PredatorV1/assets/119745695/8b7d6ebe-e97f-48ee-8fb4-126b51c29d2c" alt="auto-pilot_tab">
   </a>
 </div>
-
-![vehicle](https://github.com/Jay0Hx/PredatorV1/assets/119745695/74b96ee0-e7c8-40d7-9aca-953e924f6484)
-![auto-pilot](https://github.com/Jay0Hx/PredatorV1/assets/119745695/8b7d6ebe-e97f-48ee-8fb4-126b51c29d2c)
 
 <h1 align="center">Features:</a></h1>
 
