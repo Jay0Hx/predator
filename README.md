@@ -32,6 +32,16 @@ Predator V1 is a new version of Alien2 (Linked above) which was an amazing tool 
 
    ```sh
    🛞 > 'Drivers' Menu.
+            ∟ List all drivers connected to the current session.
+            ∟ Position, name and car name information printed to the menu.
+            ∟ MULTIPLAYER OPTIONS:
+                  ∟ Spectate
+                  ∟ Teleport Too
+                  ∟ Steal Name
+            ∟ SINGLE PLAYER OPTIONS:
+                  ∟ Force Jump
+                  ∟ Launch Up
+                  ∟ Skid off track
    🚗 > 'Vehicle' Menu.
    ✈️ > 'Auto-pilot' Menu.
    ```
