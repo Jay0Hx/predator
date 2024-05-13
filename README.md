@@ -31,7 +31,7 @@ REQUIREMENTS:
 
    1️⃣ > Download the latest release from this GitHub repo.
    2️⃣ > Extract the contents to your desktop.
-   3️⃣ > Rename the new file to 'PredatorV1'.
+   3️⃣ > Rename the new file to 'predator'.
    4️⃣ > Navigate to your Assetto Corsa directory, usually located at 'C:\SteamLibrary\steamapps\common\assettocorsa'
    5️⃣ > Now head into 'Apps', then, 'lua' and drag and drop the 'PredatorV1' file into this directory.
    6️⃣ > Load into a sesion of your choice on CSP version 0.1.79 or lower.
