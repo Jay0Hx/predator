@@ -145,10 +145,6 @@ function script.windowMain(dt)
             ui.text("Know bugs with the 'Auto-Pilot' menu.")
             ui.text("• Too much grip will make you fly off the track (Can be countered with downforce).")
         end)
-
-        ui.tabItem("r-pilot", function()  
-            ui.text(ac.getCar(0).position)
-        end)
     end)
 end
 
