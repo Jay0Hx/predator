@@ -1,10 +1,4 @@
 local settings = {
-    cl_information = {                                                      -- THIS INFORMATION IS WHAT WE HAVE STORED FOR USE IN THE INFORMATION PAGE.
-        cl_discord              = "https://discord.gg/AK6YmRNBcV",          -- Discord link that we hyperlink
-        cl_author               = "CodeLoom | J I N X & itsluiz",           -- Author information with creds too DLL creator.
-        cl_name                 = "Predator",                               -- Project name.
-        cl_version              = "v0.2(A)",                                -- Version name.
-    },
     cl_autoPilot = {                                                        -- ALL VALUES HERE ARE STORED DEFAULTS FOR AI DRIVING!
         cl_apEnabled            = false,                                    -- By default we disable the AI driving feature.
         cl_skill                = 50,                                       -- Default value for how skillfull a driver the AI is.
@@ -35,26 +29,15 @@ local cl_driversData = {}
 local localCar;
 
 function script.windowMain(dt) 
-    table.sort(cl_driversData, function(a, b) return a.cl_driverPosition < b.cl_driverPosition end)
     ui.tabBar("dt", function()
-        ui.tabItem("Information", function()
-            ui.separator()
-            ui.text("Join the discord:") ui.sameLine() ui.copyable(settings.cl_information.cl_discord)    
-            ui.text("Created by:") ui.sameLine() ui.text(settings.cl_information.cl_author)        
-            ui.text("Join the discord:") ui.sameLine() ui.text(settings.cl_information.cl_name)     
-            ui.text("Client Version:") ui.sameLine() ui.text(settings.cl_information.cl_version)
-            ui.text(physics.allowed())
-            ui.separator()  
-        end)
         ui.tabItem("Leaderboard ("..ac.getSim().connectedCars..")", function()
-            ui.text('• You must SPECTATE the target before you can teleport to them!')
-            ui.text('• Teleportation is dependent on camera angle. (First person TPs inside the target)')
             for i, cl_data in ipairs(cl_driversData) do
                 if cl_data.cl_carData then
                     ui.treeNode(cl_data.cl_driverName, ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()
                         ui.text(" • Race position: "..cl_data.cl_driverPosition)
                         ui.text(" • Drivers name: "..cl_data.cl_driverName)
                         ui.text(" • Drivers car: "..cl_data.cl_driversCar)  
+                        ui.text(ac.getCar(cl_data.cl_targetSim).position)
                         ui.separator()
                         ui.text("Online player controls:") ui.sameLine()
                         if cl_data.cl_driverName == ac.getDriverName(0) then
@@ -70,7 +53,7 @@ function script.windowMain(dt)
                                 physics.setDriverName(ac.getDriverName(cl_data.cl_targetSim).." ", "ENG") 
                             end ui.sameLine()
                             if ui.button("Teleport Too") then 
-                                physics.setCarPosition(0, ac.getCameraPosition(), ac.getCameraDirection()) 
+                                physics.setCarPosition(0, ac.getCar(cl_data.cl_targetSim).position, ac.getCar(cl_data.cl_targetSim).position) 
                             end
                         end
                         if not ac.getSim().isOnlineRace and cl_data.cl_driverName ~= ac.getDriverName(0) then
@@ -89,11 +72,10 @@ function script.windowMain(dt)
             end
             table.clear(cl_driversData)
         end)
-
         ui.tabItem("Vehicle", function()
             ui.treeNode("Gears", ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()
                 if ui.radioButton("Lock selected gear", settings.cl_vehicle.cl_gearLock) then settings.cl_vehicle.cl_gearLock = not settings.cl_vehicle.cl_gearLock end
-                local currentGear, hasGearChanged = ui.slider("     ", settings.cl_vehicle.cl_chosenGear, 0, 10, "%.f - Chosen gear")
+                local currentGear, hasGearChanged = ui.slider("     ", settings.cl_vehicle.cl_chosenGear, 0, ac.getCar(0).gearCount, "%.f - Chosen gear")
                 if hasGearChanged then 
                     settings.cl_vehicle.cl_chosenGear = currentGear 
                     settings.cl_vehicle.cl_gearLock = false
@@ -101,7 +83,7 @@ function script.windowMain(dt)
             end)
             ui.treeNode("Fuel", ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()
                 if ui.radioButton("Freeze fuel amount", settings.cl_vehicle.cl_freezeFuel >= 0) then settings.cl_vehicle.cl_freezeFuel = settings.cl_vehicle.cl_freezeFuel > 0 and -1 or localCar.fuel end
-                local currentFuel, hasFuelChanged = ui.slider("  ", settings.cl_vehicle.cl_fuel, 0, 150, "%.0fkg - Fuel")
+                local currentFuel, hasFuelChanged = ui.slider("  ", settings.cl_vehicle.cl_fuel, 0, ac.getCar(0).maxFuel, "%.0fkg - Fuel")
                 if hasFuelChanged then settings.cl_vehicle.cl_fuel = currentFuel physics.setCarFuel(0, currentFuel) end
             end)
             ui.treeNode("Handling", ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()
@@ -117,7 +99,7 @@ function script.windowMain(dt)
                 local currentBrake, hasChangedBrake = ui.slider("    ", settings.cl_vehicle.cl_braking, 0, 1000, "%.1fnm - Braking")
                 if hasChangedBrake then settings.cl_vehicle.cl_braking = currentBrake end
             end)
-            ui.treeNode("Vehicle relative position manipulator", ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()        
+            ui.treeNode("Vehicle relative position manipulator", ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function () 
                 local currentX, hasXchanged = ui.slider("   ", settings.cl_experimental.cl_velX, -10, 10, "%.1f - X Axis")
                 if hasXchanged then settings.cl_experimental.cl_velX = currentX physics.setCarVelocity(0, vec3(currentX, 0, 0)) end ui.sameLine() ui.sameLine()   
                 if ui.button("Reset X") then settings.cl_experimental.cl_velX = 0.0 end          
@@ -162,6 +144,10 @@ function script.windowMain(dt)
             if hasTopChanged then settings.cl_autoPilot.cl_topSpeed = currentTop end
             ui.text("Know bugs with the 'Auto-Pilot' menu.")
             ui.text("• Too much grip will make you fly off the track (Can be countered with downforce).")
+        end)
+
+        ui.tabItem("r-pilot", function()  
+            ui.text(ac.getCar(0).position)
         end)
     end)
 end
