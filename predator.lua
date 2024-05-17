@@ -7,8 +7,6 @@ local settings = {
     },
     cl_autoPilot = {                                                        -- ALL VALUES HERE ARE STORED DEFAULTS FOR AI DRIVING!
         cl_apEnabled            = false,                                    -- By default we disable the AI driving feature.
-        cl_throttleLim          = nil,                                      -- DONT KNOW YET.
-        cl_steerMulti           = nil,                                      -- DONT KNOW YET.
         cl_skill                = 50,                                       -- Default value for how skillfull a driver the AI is.
         cl_aggressiveness       = 50,                                       -- Default value for how aggressive the AI drive.
         cl_topSpeed             = 250,                                      -- Default top speed that AI are allowed to drive.
@@ -17,7 +15,6 @@ local settings = {
     cl_vehicle = {                                                          -- ALL VALUES HERE ARE STORED DEFAULTS FOR THE 'VEHICLES' MENU!
         cl_optTires             = false,                                    -- By default we want to set this to false.
         cl_damage               = false,                                    -- This is for disabling body and engine damge.
-        cl_antiRam              = false,                                    -- This is basically no clip but REALLY bad.
         cl_drs                  = false,                                    -- This will attempt to force DRS in the session.
         cl_power                = 0.0,                                      -- Default to 0 because this is additional power.
         cl_braking              = 0.0,                                      -- Default to 0 because this is additional breaking.
@@ -28,9 +25,9 @@ local settings = {
         cl_chosenGear           = 1,                                        -- First gear is selected by default.
     },
     cl_experimental = {                                                     -- THIS IS WHERE THE EXPIERIMENTAL FEATURES ARE STORED FOR USE.
-        cl_velX                 = 0.0,                                      -- This is the X value for the jumpy tool thing.
-        cl_velY                 = 0.0,                                      -- This is the Y value for the jumpy tool thing.
-        cl_velZ                 = 0.0,                                      -- This is the Z value for the jumpy tool thing.
+        cl_velX                 = 0.1,                                      -- This is the X value for the jumpy tool thing.
+        cl_velY                 = 0.1,                                      -- This is the Y value for the jumpy tool thing.
+        cl_velZ                 = 0.1,                                      -- This is the Z value for the jumpy tool thing.
     },
 }
 
@@ -45,7 +42,8 @@ function script.windowMain(dt)
             ui.text("Join the discord:") ui.sameLine() ui.copyable(settings.cl_information.cl_discord)    
             ui.text("Created by:") ui.sameLine() ui.text(settings.cl_information.cl_author)        
             ui.text("Join the discord:") ui.sameLine() ui.text(settings.cl_information.cl_name)     
-            ui.text("Join the discord:") ui.sameLine() ui.text(settings.cl_information.cl_version)
+            ui.text("Client Version:") ui.sameLine() ui.text(settings.cl_information.cl_version)
+            ui.text(physics.allowed())
             ui.separator()  
         end)
         ui.tabItem("Leaderboard ("..ac.getSim().connectedCars..")", function()
@@ -136,14 +134,9 @@ function script.windowMain(dt)
                 if ui.button("Jump") then physics.setCarVelocity(0, vec3(0, 6, 0)) end ui.sameLine()
                 if ui.button("Leap") then physics.setCarVelocity(0, vec3(0, 9, 0)) end  ui.separator()
             end)
-            ui.separator()
             ui.text("Other options:")
             if ui.radioButton("Disable body and engine damage", settings.cl_vehicle.cl_damage) then settings.cl_vehicle.cl_damage = not settings.cl_vehicle.cl_damage end   
-            if ui.radioButton("Anti-ram", settings.cl_vehicle.cl_antiRam) then settings.cl_vehicle.cl_antiRam = not settings.cl_vehicle.cl_antiRam end
             ui.separator()
-            ui.text("Know bugs with the 'Vehicle' menu.")
-            ui.text("• Trigger current values wont work unless all bars have a value.")
-            ui.text("• Counter rammers is a bit tempremental.")
         end)
         ui.tabItem("Auto-pilot", function()     
             if ui.checkbox("Enable 'Auto-Pilot'", settings.cl_autoPilot.cl_apEnabled) then
@@ -178,9 +171,9 @@ function script.update(dt)
     if settings.cl_vehicle.cl_downforce > 0 then physics.addForce(0, vec3(0, 0, 0), true, vec3(0, -settings.cl_vehicle.cl_downforce * 9.8 * dt * 100, 0), true) end
     if settings.cl_vehicle.cl_optTires then local temp = ac.getCar(0).wheels[0].tyreOptimumTemperature physics.setTyresTemperature(0, ac.Wheel.All, temp) end
     if settings.cl_vehicle.cl_damage then physics.setCarBodyDamage(0, vec4(0, 0, 0, 0)) physics.setCarEngineLife(0, 1000) end
+    if settings.cl_autoPilot.cl_topSpeed then physics.setAITopSpeed(0, settings.cl_autoPilot.cl_topSpeed) end
     if settings.cl_vehicle.cl_freezeFuel >= 0 then physics.setCarFuel(0, settings.cl_vehicle.cl_fuel) end
     if settings.cl_vehicle.cl_gearLock then physics.engageGear(0, settings.cl_vehicle.cl_chosenGear) end
-    if settings.cl_vehicle.cl_antiRam then physics.setCarCollisions(0, true) end
     if settings.cl_vehicle.cl_power > 0 and (localCar.gear > 0) and (localCar.rpm + 200 < localCar.rpmLimiter) then
         local passivePush = settings.cl_vehicle.cl_power * localCar.mass * localCar.gas * dt * 100     
         physics.addForce(0, vec3(0, 0, 0), true, vec3(0, 0, passivePush), true)
@@ -189,9 +182,6 @@ function script.update(dt)
         local passivePush = settings.cl_vehicle.cl_braking * localCar.mass * localCar.brake * dt * 100
         passivePush = localCar.localVelocity.z > 0.0 and -passivePush or passivePush     
         physics.addForce(0, vec3(0, 0, 0), true, vec3(0, 0, passivePush), true)
-    end
-    if settings.cl_autoPilot.cl_topSpeed then
-        physics.setAITopSpeed(0, settings.cl_autoPilot.cl_topSpeed)  
     end
     for i = 0, ac.getSim().carsCount - 1 do
         if ac.getDriverName(i) ~= "" then
