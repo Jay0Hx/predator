@@ -1,27 +1,35 @@
 local settings = {
-    cl_autoPilot = {                                                        -- ALL VALUES HERE ARE STORED DEFAULTS FOR AI DRIVING!
-        cl_apEnabled            = false,                                    -- By default we disable the AI driving feature.
-        cl_skill                = 50,                                       -- Default value for how skillfull a driver the AI is.
-        cl_aggressiveness       = 50,                                       -- Default value for how aggressive the AI drive.
-        cl_topSpeed             = 250,                                      -- Default top speed that AI are allowed to drive.
-        cl_grip                 = 5,                                        -- Default value for AI grip.
-    }, 
-    cl_vehicle = {                                                          -- ALL VALUES HERE ARE STORED DEFAULTS FOR THE 'VEHICLES' MENU!
-        cl_optTires             = false,                                    -- By default we want to set this to false.
-        cl_damage               = false,                                    -- This is for disabling body and engine damge.
-        cl_drs                  = false,                                    -- This will attempt to force DRS in the session.
-        cl_power                = 0.0,                                      -- Default to 0 because this is additional power.
-        cl_braking              = 0.0,                                      -- Default to 0 because this is additional breaking.
-        cl_downforce            = 0.0,                                      -- Default to 0 because this is additional downforce.
-        cl_fuel                 = 15,                                       -- Deafult to 15 so the tank isnt empty if we use it.
-        cl_freezeFuel           = -1,                                       -- This will freeze how much fuel is in the users car.
-        cl_gearLock             = false,                                    -- This is used to lock the gear in the chosen value of the user (Max 10)
-        cl_chosenGear           = 1,                                        -- First gear is selected by default.
+
+    cl_dataBank = {
+        cl_calculateMaxSpeed    = true,             -- By default we want to calculate the max speed possible.
+        cl_maxSpeed             = 0,                -- Base figure used in the max speed calculations.
     },
-    cl_experimental = {                                                     -- THIS IS WHERE THE EXPIERIMENTAL FEATURES ARE STORED FOR USE.
-        cl_velX                 = 0.1,                                      -- This is the X value for the jumpy tool thing.
-        cl_velY                 = 0.1,                                      -- This is the Y value for the jumpy tool thing.
-        cl_velZ                 = 0.1,                                      -- This is the Z value for the jumpy tool thing.
+
+    cl_autoPilot = {                                -- ALL VALUES HERE ARE STORED DEFAULTS FOR AI DRIVING!
+        cl_apEnabled            = false,            -- By default we disable the AI driving feature.
+        cl_skill                = 50,               -- Default value for how skillfull a driver the AI is.
+        cl_aggressiveness       = 50,               -- Default value for how aggressive the AI drive.
+        cl_topSpeed             = 250,              -- Default top speed that AI are allowed to drive.
+        cl_grip                 = 5,                -- Default value for AI grip.
+
+        cl_maxSpeed = 0,
+    }, 
+    cl_vehicle = {                                  -- ALL VALUES HERE ARE STORED DEFAULTS FOR THE 'VEHICLES' MENU!
+        cl_optTires             = false,            -- By default we want to set this to false.
+        cl_damage               = false,            -- This is for disabling body and engine damge.
+        cl_drs                  = false,            -- This will attempt to force DRS in the session.
+        cl_power                = 0.0,              -- Default to 0 because this is additional power.
+        cl_braking              = 0.0,              -- Default to 0 because this is additional breaking.
+        cl_downforce            = 0.0,              -- Default to 0 because this is additional downforce.
+        cl_fuel                 = 15,               -- Deafult to 15 so the tank isnt empty if we use it.
+        cl_freezeFuel           = -1,               -- This will freeze how much fuel is in the users car.
+        cl_gearLock             = false,            -- This is used to lock the gear in the chosen value of the user (Max 10)
+        cl_chosenGear           = 1,                -- First gear is selected by default.
+    },
+    cl_experimental = {                             -- THIS IS WHERE THE EXPIERIMENTAL FEATURES ARE STORED FOR USE.
+        cl_velX                 = 0.1,              -- This is the X value for the jumpy tool thing.
+        cl_velY                 = 0.1,              -- This is the Y value for the jumpy tool thing.
+        cl_velZ                 = 0.1,              -- This is the Z value for the jumpy tool thing.
     },
 }
 
@@ -30,14 +38,13 @@ local localCar;
 
 function script.windowMain(dt) 
     ui.tabBar("dt", function()
-        ui.tabItem("Leaderboard ("..ac.getSim().connectedCars..")", function()
+        ui.tabItem("Leaderboard ("..ac.getSim().connectedCars..")", function()   
             for i, cl_data in ipairs(cl_driversData) do
                 if cl_data.cl_carData then
                     ui.treeNode(cl_data.cl_driverName, ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()
                         ui.text(" • Race position: "..cl_data.cl_driverPosition)
                         ui.text(" • Drivers name: "..cl_data.cl_driverName)
                         ui.text(" • Drivers car: "..cl_data.cl_driversCar)  
-                        ui.text(ac.getCar(cl_data.cl_targetSim).position)
                         ui.separator()
                         ui.text("Online player controls:") ui.sameLine()
                         if cl_data.cl_driverName == ac.getDriverName(0) then
@@ -125,30 +132,40 @@ function script.windowMain(dt)
                 settings.cl_autoPilot.cl_apEnabled = not settings.cl_autoPilot.cl_apEnabled
                 physics.setCarAutopilot(settings.cl_autoPilot.cl_apEnabled)
             end
-            local currentSkill, hasChangedSkill = ui.slider(" ", settings.cl_autoPilot.cl_skill, 0, 100, "Skill - %.0f%% ")
+            if ui.checkbox("Automatically calculate top speed", settings.cl_dataBank.cl_calculateMaxSpeed) then
+                settings.cl_dataBank.cl_calculateMaxSpeed = not settings.cl_dataBank.cl_calculateMaxSpeed
+            end
+            local currentSkill, hasChangedSkill = ui.slider(" ", settings.cl_autoPilot.cl_skill, 0, 100, "AI Skill - %.0f%% ")
             if hasChangedSkill then
                 settings.cl_autoPilot.cl_skill = currentSkill
                 physics.setAILevel(0, currentSkill * 1000)
             end
-            local currentAggressiveness, hasChangedAggressiveness = ui.slider("  ", settings.cl_autoPilot.cl_aggressiveness, 0, 100, "Aggressiveness - %.0f%%")
+            local currentAggressiveness, hasChangedAggressiveness = ui.slider("  ", settings.cl_autoPilot.cl_aggressiveness, 0, 100, "AI Aggressiveness - %.0f%%")
             if hasChangedAggressiveness then
                 settings.cl_autoPilot.cl_aggressiveness = currentAggressiveness
                 physics.setAIAggression(0, currentAggressiveness)
             end
-            local currentAiGrip, hasAIGripChanged = ui.slider("   ", settings.cl_autoPilot.cl_grip, 0, 100, "Grip - x%.0f%%")
+            local currentAiGrip, hasAIGripChanged = ui.slider("   ", settings.cl_autoPilot.cl_grip, 0, 100, "AI Grip - x%.0f%%")
             if hasAIGripChanged then
                 settings.cl_autoPilot.cl_grip = currentAiGrip
-                physics.setExtraAIGrip(0, settings.cl_autoPilot.cl_grip / 4.5)         
+                physics.setExtraAIGrip(0, settings.cl_autoPilot.cl_grip / 4.8)         
+            end 
+            local currentTop, hasTopChanged = ui.slider("    ", settings.cl_autoPilot.cl_topSpeed, 0, 1000, "AI Top speed limit - %.0f%kmh")
+            if hasTopChanged then settings.cl_autoPilot.cl_topSpeed = currentTop end  
+            if settings.cl_dataBank.cl_calculateMaxSpeed then
+                ui.sameLine()
+                ui.text("Calculated top: "..math.floor(settings.cl_dataBank.cl_maxSpeed).."kmh")
             end
-            local currentTop, hasTopChanged = ui.slider("    ", settings.cl_autoPilot.cl_topSpeed, 0, 1000, "Allowed top speed - %.0f%kmh")
-            if hasTopChanged then settings.cl_autoPilot.cl_topSpeed = currentTop end
-            ui.text("Know bugs with the 'Auto-Pilot' menu.")
-            ui.text("• Too much grip will make you fly off the track (Can be countered with downforce).")
         end)
     end)
 end
 
 function script.update(dt)
+    if settings.cl_dataBank.cl_calculateMaxSpeed then
+        if settings.cl_dataBank.cl_maxSpeed < ac.getCar(0).drivetrainSpeed then
+            settings.cl_dataBank.cl_maxSpeed = ac.getCar(0).drivetrainSpeed
+        end
+    end
     localCar = ac.getCar(0)
     if settings.cl_vehicle.cl_downforce > 0 then physics.addForce(0, vec3(0, 0, 0), true, vec3(0, -settings.cl_vehicle.cl_downforce * 9.8 * dt * 100, 0), true) end
     if settings.cl_vehicle.cl_optTires then local temp = ac.getCar(0).wheels[0].tyreOptimumTemperature physics.setTyresTemperature(0, ac.Wheel.All, temp) end
