@@ -1,5 +1,4 @@
 local settings = {
-
     cl_dataBank = {
         cl_calculateMaxSpeed    = true,             -- By default we want to calculate the max speed possible.
         cl_maxSpeed             = 0,                -- Base figure used in the max speed calculations.
@@ -7,23 +6,22 @@ local settings = {
 
     cl_autoPilot = {                                -- ALL VALUES HERE ARE STORED DEFAULTS FOR AI DRIVING!
         cl_apEnabled            = false,            -- By default we disable the AI driving feature.
+        cl_topSpeed             = 250,              -- Default top speed that AI are allowed to drive.
         cl_skill                = 50,               -- Default value for how skillfull a driver the AI is.
         cl_aggressiveness       = 50,               -- Default value for how aggressive the AI drive.
-        cl_topSpeed             = 250,              -- Default top speed that AI are allowed to drive.
         cl_grip                 = 5,                -- Default value for AI grip.
-
-        cl_maxSpeed = 0,
+        cl_maxSpeed             = 0,                -- Default calculated max speed.
     }, 
     cl_vehicle = {                                  -- ALL VALUES HERE ARE STORED DEFAULTS FOR THE 'VEHICLES' MENU!
         cl_optTires             = false,            -- By default we want to set this to false.
         cl_damage               = false,            -- This is for disabling body and engine damge.
         cl_drs                  = false,            -- This will attempt to force DRS in the session.
+        cl_gearLock             = false,            -- This is used to lock the gear in the chosen value of the user (Max 10)
         cl_power                = 0.0,              -- Default to 0 because this is additional power.
         cl_braking              = 0.0,              -- Default to 0 because this is additional breaking.
         cl_downforce            = 0.0,              -- Default to 0 because this is additional downforce.
         cl_fuel                 = 15,               -- Deafult to 15 so the tank isnt empty if we use it.
         cl_freezeFuel           = -1,               -- This will freeze how much fuel is in the users car.
-        cl_gearLock             = false,            -- This is used to lock the gear in the chosen value of the user (Max 10)
         cl_chosenGear           = 1,                -- First gear is selected by default.
     },
     cl_experimental = {                             -- THIS IS WHERE THE EXPIERIMENTAL FEATURES ARE STORED FOR USE.
@@ -36,15 +34,46 @@ local settings = {
 local cl_driversData = {}
 local localCar;
 
+function formatTime(ms)
+    local totalSeconds = math.floor(ms / 1000)
+    local minutes = math.floor(totalSeconds / 60)
+    local seconds = totalSeconds % 60
+    local milliseconds = ms % 1000
+    return string.format("%02d:%02d:%03d", minutes, seconds, milliseconds)
+end
+
 function script.windowMain(dt) 
     ui.tabBar("dt", function()
         ui.tabItem("Leaderboard ("..ac.getSim().connectedCars..")", function()   
             for i, cl_data in ipairs(cl_driversData) do
                 if cl_data.cl_carData then
+
+                    local cl_lookVectors = ac.getCar(cl_data.cl_targetSim).look
+                    local cl_vectors = {
+                        cl_x = -cl_lookVectors.x,
+                        cl_y = -cl_lookVectors.y,
+                        cl_z = -cl_lookVectors.z,
+                    }
                     ui.treeNode(cl_data.cl_driverName, ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()
                         ui.text(" • Race position: "..cl_data.cl_driverPosition)
                         ui.text(" • Drivers name: "..cl_data.cl_driverName)
                         ui.text(" • Drivers car: "..cl_data.cl_driversCar)  
+                        ui.text(" • Current speed: ") ui .sameLine() ui.text(math.floor(ac.getCar(cl_data.cl_targetSim).speedKmh).." kmh")
+                        ui.treeNode("Lap information", ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()
+                            ui.text(" • Current lap time:") ui .sameLine() ui.text(formatTime(ac.getCar(cl_data.cl_targetSim).lapTimeMs))
+                            ui.text(" • Best lap time:") ui .sameLine() ui.text(formatTime(ac.getCar(cl_data.cl_targetSim).bestLapTimeMs))
+
+                            ui.text(" • Lap count:") ui .sameLine() ui.text(math.floor(ac.getCar(cl_data.cl_targetSim).lapCount))
+                        end)
+                        ui.treeNode("Specific vehicle information", ui.TreeNodeFlags.DefaultOpen and ui.TreeNodeFlags.Framed, function ()
+                            ui.text(" • Total vehicle mass:") ui .sameLine() ui.text(math.floor(ac.getCar(cl_data.cl_targetSim).mass).." KG")
+                            ui.text(" • Steering lock angle:") ui .sameLine() ui.text(math.floor(ac.getCar(cl_data.cl_targetSim).steerLock).." Degrees")
+                            ui.text(" • Maximum vehicle fuel:") ui .sameLine() ui.text(math.floor(ac.getCar(cl_data.cl_targetSim).maxFuel).." L")
+                            ui.text(" • Remaining fuel:") ui .sameLine() ui.text(math.floor(ac.getCar(cl_data.cl_targetSim).fuel).." L")
+                            ui.text(" • Vehicle gear count:") ui .sameLine() ui.text(math.floor(ac.getCar(cl_data.cl_targetSim).gearCount))
+                            ui.text(" • Turbo/s count:") ui .sameLine() ui.text(math.floor(ac.getCar(cl_data.cl_targetSim).turboCount))
+           
+                        end)
                         ui.separator()
                         ui.text("Online player controls:") ui.sameLine()
                         if cl_data.cl_driverName == ac.getDriverName(0) then
@@ -60,7 +89,7 @@ function script.windowMain(dt)
                                 physics.setDriverName(ac.getDriverName(cl_data.cl_targetSim).." ", "ENG") 
                             end ui.sameLine()
                             if ui.button("Teleport Too") then 
-                                physics.setCarPosition(0, ac.getCar(cl_data.cl_targetSim).position, ac.getCar(cl_data.cl_targetSim).position) 
+                                physics.setCarPosition(0, ac.getCar(cl_data.cl_targetSim).position, vec3(cl_vectors.cl_x, cl_vectors.cl_y, cl_vectors.cl_z)) 
                             end
                         end
                         if not ac.getSim().isOnlineRace and cl_data.cl_driverName ~= ac.getDriverName(0) then
@@ -148,7 +177,7 @@ function script.windowMain(dt)
             local currentAiGrip, hasAIGripChanged = ui.slider("   ", settings.cl_autoPilot.cl_grip, 0, 100, "AI Grip - x%.0f%%")
             if hasAIGripChanged then
                 settings.cl_autoPilot.cl_grip = currentAiGrip
-                physics.setExtraAIGrip(0, settings.cl_autoPilot.cl_grip / 4.8)         
+                physics.setExtraAIGrip(0, settings.cl_autoPilot.cl_grip / 4.5)         
             end 
             local currentTop, hasTopChanged = ui.slider("    ", settings.cl_autoPilot.cl_topSpeed, 0, 1000, "AI Top speed limit - %.0f%kmh")
             if hasTopChanged then settings.cl_autoPilot.cl_topSpeed = currentTop end  
