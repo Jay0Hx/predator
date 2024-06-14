@@ -8,7 +8,6 @@ local settings = {
         cl_apEnabled            = false,            -- By default we disable the AI driving feature.
         cl_topSpeed             = 250,              -- Default top speed that AI are allowed to drive.
         cl_skill                = 50,               -- Default value for how skillfull a driver the AI is.
-        cl_aggressiveness       = 50,               -- Default value for how aggressive the AI drive.
         cl_grip                 = 5,                -- Default value for AI grip.
         cl_maxSpeed             = 0,                -- Default calculated max speed.
     }, 
@@ -47,7 +46,6 @@ function script.windowMain(dt)
         ui.tabItem("Leaderboard ("..ac.getSim().connectedCars..")", function()   
             for i, cl_data in ipairs(cl_driversData) do
                 if cl_data.cl_carData then
-
                     local cl_lookVectors = ac.getCar(cl_data.cl_targetSim).look
                     local cl_vectors = {
                         cl_x = -cl_lookVectors.x,
@@ -168,11 +166,6 @@ function script.windowMain(dt)
             if hasChangedSkill then
                 settings.cl_autoPilot.cl_skill = currentSkill
                 physics.setAILevel(0, currentSkill * 1000)
-            end
-            local currentAggressiveness, hasChangedAggressiveness = ui.slider("  ", settings.cl_autoPilot.cl_aggressiveness, 0, 100, "AI Aggressiveness - %.0f%%")
-            if hasChangedAggressiveness then
-                settings.cl_autoPilot.cl_aggressiveness = currentAggressiveness
-                physics.setAIAggression(0, currentAggressiveness)
             end
             local currentAiGrip, hasAIGripChanged = ui.slider("   ", settings.cl_autoPilot.cl_grip, 0, 100, "AI Grip - x%.0f%%")
             if hasAIGripChanged then
